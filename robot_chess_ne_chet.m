@@ -1,7 +1,6 @@
 function robot()
 x='o'; %Сторона по горизонтали
 y='s'; %Сторона по вертикали
-
 r = Rob_abs('ROB_3.map');
 r.mark();
 flag = false;
@@ -11,7 +10,6 @@ if((r.is_bord(x) == false)&&(r.is_bord(y) == false))    %Робот идет до какого-ни
 end
 step_down(r,x,y,flag)
 end
-
 function flag = step_rob(r,x,flag_mark)
 storona = x;
 flag = flag_mark;
@@ -27,7 +25,6 @@ else
 end
 end
 end
-
 function step_down(r,x,y,flag)
 flag_r=flag;
 disp(x)
@@ -37,7 +34,6 @@ br_x=invert_bord(x);
 disp(br_y)
 disp(br_x)
 while r.is_bord(br_y) == false
-    
     while r.is_bord(br_x) == false
     r.step(br_x)
         if(flag_r == 1)
@@ -95,17 +91,14 @@ while r.is_bord(br_y) == false
     end
 end
 end
-
 function vert=invert_bord(x)
 vert=x;
-
 if(vert == 'n')
     vert = 's';
 else if(vert == 's')
     vert = 'n';
     end
 end
-
 if(vert == 'o')
     vert = 'w';
 else if(vert == 'w')
